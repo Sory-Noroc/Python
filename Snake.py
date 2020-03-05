@@ -1,8 +1,8 @@
 import pygame
 import sys
-import time
-import random
 import tkinter
+from time import sleep
+from random import randrange
 from os import environ
 
 
@@ -79,9 +79,9 @@ class StarterGui:
 class Game:
     width = 720
     height = 420
+    difficulty = 25
 
     def __init__(self, x, y):
-        self.difficulty = 25
         self.x = x
         self.y = y
         pygame.init()
@@ -149,9 +149,10 @@ class Game:
         wait_rect.midtop = (self.width / 2, self.height / 1.1)
         self.game_window.blit(wait_label, wait_rect)
         pygame.display.flip()
-        time.sleep(1)
+        sleep(1)
         pygame.quit()
         snake.__init__()  # For the next game
+        food.__init__()
         starter_gui.__init__()
         starter_gui.lobby()
 
@@ -208,7 +209,7 @@ class Snake:
 
 class Food:
     def __init__(self):
-        self.pos = [random.randrange(1, (game.width // 10)) * 10, random.randrange(1, (game.height // 10))
+        self.pos = [randrange(1, (game.width // 10)) * 10, randrange(1, (game.height // 10))
                     * 10]
         self.spawn = True
 
@@ -217,8 +218,7 @@ class Food:
 
     def spawn_food(self):
         if not self.spawn:
-            self.pos = [random.randrange(1, (game.width // 10)) * 10, random.randrange(1, (game.height //
-                                                                                           10)) * 10]
+            self.pos = [randrange(1, (game.width // 10)) * 10, randrange(1, (game.height // 10)) * 10]
         self.spawn = True
 
 
