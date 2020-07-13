@@ -37,3 +37,5 @@ the_scraper = Scraper()
 
 if the_scraper.search_again == 'Yes':
 	the_scraper = Scraper()
+else:
+	print('Thank you for your attention!')
