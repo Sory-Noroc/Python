@@ -24,12 +24,12 @@ class Scraper:
 			movie_page = requests.get(self.imdb_link + link)
 			new_soup = BeautifulSoup(movie_page.text, 'lxml')
 			# print(new_soup.prettify())
-			print(new_soup.find('h1', class_='').text)
-			if new_soup.find('span', itemprop='ratingValue'):
-				print(f"Rating: {new_soup.find('span', itemprop='ratingValue').text}")
-			print(f"Sumarry: {new_soup.find('div', class_='summary_text').text.strip()}")
+			print(new_soup.find('h1', class_='').text) # The movie name
+			if new_soup.find('span', itemprop='ratingValue'): # Check if the movie is rated
+				print(f"Rating: {new_soup.find('span', itemprop='ratingValue').text}") 
+			print(f"Sumarry: {new_soup.find('div', class_='summary_text').text.strip()}") # Summary
 			print()
-			sleep(2)
+			sleep(2) # To avoid overwhelming the website
 
 		self.search_again = input("That's it. Search again? [Yes/No] ")
 
