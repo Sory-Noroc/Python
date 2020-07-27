@@ -4,7 +4,6 @@ import vlc
 from threading import Thread
 from PyQt5 import QtCore, QtGui, QtWidgets
 from tkinter import Tk
-from tkinter.filedialog import askopenfilenames
 from time import sleep
 from pygame import mixer
 
@@ -187,7 +186,7 @@ class UiMainWindow:
     def add_song(self):
         try:
             Tk().withdraw()  # Creating the interface for choosing songs
-            list_of_chosen_audio = askopenfilenames(title='Choose audio files')
+            list_of_chosen_audio = tkinter.filedialog.askopenfilenames(title='Choose audio files')
             with open('audio files.txt', 'a+') as audio_f:
                 audio_f.seek(0)
                 for audio_path in list_of_chosen_audio:
