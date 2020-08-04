@@ -10,7 +10,7 @@ class StarterGui:
     def __init__(self):
         self.mw = tkinter.Tk()  # The main window
         self.mw.title('Snake')
-        self.mw.configure(bg='yellow')
+        self.mw.configure(bg='yellow')  # Configuring the background
         self.x = self.mw.winfo_screenwidth() // 4
         self.y = self.mw.winfo_screenheight() // 4
         self.mw_width = self.mw.winfo_screenwidth() // 2
