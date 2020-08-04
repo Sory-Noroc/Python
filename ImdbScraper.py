@@ -35,7 +35,7 @@ class Scraper:
 
 the_scraper = Scraper()
 
-if the_scraper.search_again == 'Yes':
-	the_scraper = Scraper()
+if the_scraper.search_again == 'Yes':  # If the user wants to search again
+	the_scraper = Scraper() 
 else:
 	print('Thank you for your attention!')
