@@ -8,7 +8,7 @@ from time import sleep
 from pygame import mixer
 
 
-class UiMainWindow:
+class UiMainWindow:  # The GUI
     def __init__(self, main_window):
         self.main_window = main_window
         self.main_window.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMinimizeButtonHint)
