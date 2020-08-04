@@ -95,7 +95,7 @@ class UiMainWindow:
                 audio_name_ = audio.split('/')[-1]  # the name with the extension
                 audio_name = '.'.join(audio_name_.split('.')[:-1])  # taking the audio name from the full name
                 self.audio_paths[audio_name] = audio[:-1]  # to avoid \n
-                self.ui_song_list.addItem(audio_name)
+                self.ui_song_list.addItem(audio_name)  # Adding the audio on the GUI
 
     def config_audio(self, audio=''):  # Changes the song of the player
         if not audio:
