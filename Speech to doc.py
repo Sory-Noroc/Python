@@ -6,7 +6,7 @@ import soundfile as sf
 from threading import Thread
 from datetime import datetime
 from tkinter import Tk, Label, Button, StringVar, messagebox, CENTER
-import numpy as np # Not used, but needed for soundfile
+import numpy as np # Not used, but needs to be installed for soundfile
 assert np
 
 class Gui:
