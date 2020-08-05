@@ -16,7 +16,7 @@ class Gui:
 		mw.title('Speech to text') # GUI Title
 		width, height = 500, 100
 		x = (mw.winfo_screenwidth() // 2) - (width // 2)
-		y = (mw.winfo_screenheight() // 2) - (height // 2)
+		y = (mw.winfo_screenheight() // 2) - (height // 2)  # Sizing the window on the screen's center
 		mw.geometry(f'500x75+{x}+{y}') # GUI sizing
 
 		# Making and placing the widgets
