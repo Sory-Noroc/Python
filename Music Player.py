@@ -13,6 +13,7 @@ class UiMainWindow:
         self.main_window = main_window
         self.main_window.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMinimizeButtonHint)
         mixer.init()  # For the volume
+        # Initiating the music player
         self.init_ui()
         self.init_widgets()
         self.init_music()
