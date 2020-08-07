@@ -1,4 +1,5 @@
 # MP3 Player made by Sory
+
 import vlc
 from threading import Thread
 from PyQt5 import QtCore, QtGui, QtWidgets
