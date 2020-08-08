@@ -9,4 +9,4 @@ The Snake game(Windows) is pretty much what it sounds. A nice GUI from which you
 
 The Speech to doc file(Linux) is a program that can record sound from devices (microphone and even speaker/earphones, etc.) recognize what was said and write the words to a document. If the devices are good enough, the recognition is pretty accurate!
 
-If you want to use any of my programs, contact me as there might be version issues and I can help. Have a nice day.
+If you want to use any of my programs, contact me as there might be version issues and I can help. Have a nice day!
