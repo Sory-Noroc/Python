@@ -170,7 +170,7 @@ class UiMainWindow:
                         break  # To prevent the loop from going after finishing it's purpose
 
             except IndexError:  # Will raise when the last song is skipped
-                self.default_song()
+                self.default_song()  # The first song
         else:
             self.default_song()
         self.config_audio(audio=self.current_audio)
