@@ -34,24 +34,31 @@ class UiMainWindow:
         self.play_pause_button = QtWidgets.QPushButton(self.centralwidget)
         self.play_pause_button.setGeometry(QtCore.QRect(370, 50, 40, 24))
         self.play_pause_button.clicked.connect(self.play_pause_song)
+        
         self.stop_button = QtWidgets.QPushButton(self.centralwidget)
         self.stop_button.setGeometry(QtCore.QRect(260, 50, 40, 24))
         self.stop_button.clicked.connect(self.stop_song)
+        
         self.add_new_song_button = QtWidgets.QPushButton(self.centralwidget)
         self.add_new_song_button.setGeometry(QtCore.QRect(690, 50, 80, 24))
         self.add_new_song_button.clicked.connect(self.add_song)
+        
         self.remove_song_button = QtWidgets.QPushButton(self.centralwidget)
         self.remove_song_button.setGeometry(QtCore.QRect(630, 50, 50, 24))
         self.remove_song_button.clicked.connect(self.remove_song)
+        
         self.restart_button = QtWidgets.QPushButton(self.centralwidget)
         self.restart_button.setGeometry(QtCore.QRect(470, 50, 50, 24))
         self.restart_button.clicked.connect(self.restart_song)
+        
         self.next_button = QtWidgets.QPushButton(self.centralwidget)
         self.next_button.setGeometry(QtCore.QRect(420, 50, 40, 24))
         self.next_button.clicked.connect(self.next_song)
+        
         self.previous_button = QtWidgets.QPushButton(self.centralwidget)
         self.previous_button.setGeometry(QtCore.QRect(310, 50, 50, 24))
         self.previous_button.clicked.connect(self.previous_song)
+        
         self.volume_slider = QtWidgets.QSlider(self.centralwidget)
         self.volume_slider.setMinimum(0)
         self.volume_slider.setMaximum(100)
@@ -59,14 +66,17 @@ class UiMainWindow:
         self.volume_slider.setGeometry(QtCore.QRect(20, 40, 160, 20))
         self.volume_slider.setOrientation(QtCore.Qt.Horizontal)
         self.volume_slider.valueChanged.connect(self.volume)
+        
         self.checkbox = QtWidgets.QCheckBox(self.centralwidget)
         self.checkbox.stateChanged.connect(self.auto_play)
         self.checkbox.setGeometry(QtCore.QRect(540, 54, 70, 20))
+        
         # Initiating the fonts for the labels
         font_7 = QtGui.QFont()
         font_7.setPointSize(7)
         font_12 = QtGui.QFont()
         font_12.setPointSize(12)
+        
         # Initiating the labels
         self.player_label = QtWidgets.QLabel(self.centralwidget)
         self.player_label.setGeometry(QtCore.QRect(340, 16, 40, 20))
@@ -74,14 +84,16 @@ class UiMainWindow:
         self.volume_label = QtWidgets.QLabel(self.centralwidget)
         self.volume_label.setGeometry(QtCore.QRect(20, 20, 40, 20))
         self.volume_label.setFont(font_7)
+        
         # Initiating the lists and music
         self.ui_song_list = QtWidgets.QListWidget(self.centralwidget)
         self.ui_song_list.setGeometry(QtCore.QRect(10, 90, 780, 480))
         self.ui_song_list.setEnabled(True)
         self.ui_song_list.setStyleSheet('background-color: lightblue;')
+        
         self.saved_music()  # Adding all the previously saved music
         self.all_songs = self.ui_song_list.findItems('', QtCore.Qt.MatchContains)
-        self.current_audio = ''
+        self.current_audio = ''  # The song playing at this moment
         self.checking_thread = None  # For the auto play
         self.ui_song_list.itemClicked.connect(self.play_song)
         self.retranslate_ui(self.main_window)
