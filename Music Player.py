@@ -96,6 +96,7 @@ class UiMainWindow:
         self.current_audio = ''  # The song playing at this moment
         self.checking_thread = None  # For the auto play
         self.ui_song_list.itemClicked.connect(self.play_song)
+        
         self.retranslate_ui(self.main_window)
         QtCore.QMetaObject.connectSlotsByName(self.main_window)
 
@@ -110,16 +111,16 @@ class UiMainWindow:
                 self.ui_song_list.addItem(audio_name)  # Adding the audio on the GUI
 
     def config_audio(self, audio=''):  # Changes the song of the player
-        if not audio:
+        if not audio:  # Play nothing
             media = self.vlc_instance.media_new(audio)
-        else:
+        else:  # Play what was clicked
             media = self.vlc_instance.media_new(self.audio_paths[audio])
         self.player = self.vlc_instance.media_player_new()
         self.player.set_media(media)
 
     def play_song(self, song):  # This is called when a song is clicked
-        self.current_audio = song.text()
-        self.player.stop()
+        self.current_audio = song.text()  # Getting it's name
+        self.player.stop()  # Stopping previous audio
         self.config_audio(audio=self.current_audio)
         self.player.play()
 
