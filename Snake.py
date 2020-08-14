@@ -1,3 +1,6 @@
+# Snake game made by me
+# Script designed on Windows. Cross-platform
+
 import pygame
 import sys
 import tkinter
