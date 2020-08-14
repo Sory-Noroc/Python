@@ -82,8 +82,7 @@ class Game:
     difficulty = 25
 
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
+        self.x, self.y = x, y
         pygame.init()
         self.fps_controller = pygame.time.Clock()
         self.score = 0
@@ -100,7 +99,7 @@ class Game:
         game.game_window.blit(score_surface, score_rect)
 
     def game_loop(self):  # The main game loop that runs continuously
-        starter_gui.mw.destroy()
+        starter_gui.mw.destroy()  # Clears the screen
         game.__init__(starter_gui.x, starter_gui.y)
         pygame.display.set_caption('Snake')
         environ['SDL_VIDEO_WINDOW_POS'] = f"{self.x},{self.y}"
